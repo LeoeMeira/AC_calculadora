@@ -23,6 +23,8 @@ def calcular():
         resultado = valor1 * valor2
         return render_template('resultado.html', resultado=resultado)
     elif operacao == 'DIVISAO':
+        if valor2 == 0:
+            return '<h1>Não existe divisão por zero</h1>'
         resultado = valor1 / valor2
         return render_template('resultado.html', resultado=resultado)
     else:
